@@ -89,6 +89,4 @@ client.on('message', message => {
     
 // });
 
-require('http').createServer().listen(3000);
-
 client.login(token);
