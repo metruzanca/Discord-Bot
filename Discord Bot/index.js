@@ -83,4 +83,12 @@ client.on('message', message => {
    
 });
 
+// let stdin = process.openStdin();
+// stdin.addListener('data', function (d) {
+//     let input = d.toString().trim();
+    
+// });
+
+require('http').createServer().listen(3000);
+
 client.login(token);
