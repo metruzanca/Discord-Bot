@@ -9,9 +9,13 @@ module.exports = {
     aliases: ['video', 'ss', 'screenshare'],
     execute(msg, args) {
         if (msg.member.voiceChannel) {
-            msg.reply(`https://www.discordapp.com/channels/${msg.guild.id}/${msg.member.voiceChannel.id}`);
+            msg.delete().then(msg =>{
+                msg.reply(`https://www.discordapp.com/channels/${msg.guild.id}/${msg.member.voiceChannel.id}`);
+            }).catch(err => console.log(err))
         } else{
-            msg.reply(`You need to be in a voice channel to use this command.`)
+            msg.delete().then(msg =>{
+                msg.reply(`You need to be in a voice channel to use this command.`)
+            }).catch(err => console.log(err))
         }
     },
 };
